@@ -20,7 +20,9 @@ RUN \
     'subliminal<2' \
     'stevedore==1.19.1' \
     python-dateutil \
-    qtfaststart && \
+    qtfaststart \
+    deluge-client \
+    gevent && \
 # download repo
   git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /usr/local$
 # create logging directory
