@@ -1,15 +1,13 @@
 FROM binhex/arch-delugevpn
-MAINTAINER tscibilia <t.scibilia@gmail.com>
+MAINTAINER tscibilia
 
-# copied from https://github.com/mdhiggins/sonarr-sma/blob/master/Dockerfile
+# copied from https://hub.docker.com/r/sabrsorensen/arch-delugevpn-mp4/~/docker$
 # get python3 and git, and install python libraries
 RUN \
-  pacman -Syu && \
-    git \
-    wget \
-    python3 \
-    python3-pip && \
+  pacman -Syu --needed --noconfirm git wget python3 python-setuptools python-pi$
+  pacman -Scc --noconfirm
 # install pip, venv, and set up a virtual self contained python environment
+RUN \
   python3 -m pip install --user --upgrade pip && \
   python3 -m pip install --user virtualenv && \
   mkdir /usr/local/bin/sma && \
@@ -24,7 +22,7 @@ RUN \
     python-dateutil \
     qtfaststart && \
 # download repo
-  git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /usr/local/bin/sma/sickbeard_mp4_automator && \
+  git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /usr/local$
 # create logging directory
   mkdir /var/log/sickbeard_mp4_automator && \
   touch /var/log/sickbeard_mp4_automator/index.log && \
@@ -38,6 +36,7 @@ RUN \
   chmod g+x /usr/local/bin/ffmpeg/ffmpeg && \
   chmod g+x /usr/local/bin/ffmpeg/ffprobe && \
 # cleanup
+  ln -s /downloads /data && \
   rm -rf \
     /tmp/* \
     /var/lib/apt/lists/* \
