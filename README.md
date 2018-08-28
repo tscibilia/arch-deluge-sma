@@ -1,4 +1,4 @@
-tscibilia/arch-deluge-sma build with sickbeard_mp4_automator built in
+binhex/arch-delugevpn build with sickbeard_mp4_automator built in
 
 /config/sma should contain the autoProcess.ini file with your settings
 
