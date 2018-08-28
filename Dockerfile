@@ -4,8 +4,8 @@ MAINTAINER tscibilia <t.scibilia@gmail.com>
 # copied from https://github.com/mdhiggins/sonarr-sma/blob/master/Dockerfile
 # get python3 and git, and install python libraries
 RUN \
-  dnf update && \
-  dnf install -y \
+  pacman -Syu && \
+  pacman -S -y \
     git \
     wget \
     python3 \
