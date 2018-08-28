@@ -11,7 +11,7 @@ Arg: `/usr/local/bin/sma/sickbeard_mp4_automator/postRadarr.py`
 
 Sample docker-compose entry:
 ```
-  radarr:
+  delugevpn-sma:
     image: tscibilia/arch-deluge-sma
     container_name: delugevpn-sma
     volumes:
