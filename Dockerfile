@@ -5,7 +5,6 @@ MAINTAINER tscibilia <t.scibilia@gmail.com>
 # get python3 and git, and install python libraries
 RUN \
   pacman -Syu && \
-  pacman -S -y \
     git \
     wget \
     python3 \
